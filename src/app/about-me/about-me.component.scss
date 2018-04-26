@@ -1,0 +1,108 @@
+/*Title with a background*/
+.header{
+    background-image:url("./../../assets/hd.jpg");
+    background-size:cover;
+    height: 300px;
+    color:white;
+    text-align:center;
+}
+/*Set the font-size and position*/
+.h1{
+   
+    height:50%; margin-bottom:-contentheight;
+    font-size: 70px;
+}
+/*Second text field*/
+.k1{
+    position: relative;
+    background-image:url("./../../assets/k1.jpg");
+    background-size:cover;
+    height: 648px;
+    color:white;
+    text-align:center; 
+}
+.h2{
+    position: absolute;
+    top: 40%;
+    left:33%;
+    text-align:center;
+    font-size: 35px;
+}
+.h3{
+    position: absolute;
+    top: 60%;
+    left:37%;
+    font-size: 35px;
+}
+/*Third text field*/
+.k2{
+    position: relative;
+    background-image:url("./../../assets/k2.jpg");
+    background-size:cover;
+    height: 648px;
+   
+    text-align:center; 
+}
+.h4{
+    position: absolute;
+    top: 40%;
+    
+    left:34%; 
+    font-size: 35px;
+}
+.h5{
+    position: absolute;
+    top: 60%;
+    left:43%;
+    text-align:center;
+    font-size: 35px;
+}
+/*Forth text field*/
+.k3{
+    background-color: white;
+    height:200px;
+    position: relative;
+    
+    font-size: 35px;
+}
+.k4{
+    position: absolute;
+        top: 50%;
+    left:29%;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  
+  /* Create four equal columns that sits next to each other */
+  /*The photo wall*/
+  .column {
+    flex: 33%;
+    max-width: 33%;
+    padding: 10px;
+    img {
+      margin-top: 8px;
+      vertical-align: middle;
+    }
+  }
+  /* Conclusion field*/
+  .jy{
+    position: relative;
+    background-image:url("./../../assets/jy.jpg");
+    background-size:cover;
+    height:423px;
+    text-align:center; 
+    
+  }
+  .l1{
+    position:relative;
+    top:50px;  
+    font-size: 35px;
+  }
+  .l2{
+    position:relative;
+    top:60px;  
+    font-size: 35px;  
+  }

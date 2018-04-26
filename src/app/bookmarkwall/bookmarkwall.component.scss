@@ -1,0 +1,40 @@
+@import url(http://fonts.googleapis.com/css?family=Yesteryear);
+
+body {
+  background-image:url("./../../assets/db.jpeg") (cover/center);
+  //height:900px;
+}
+.demo-card-wide {
+    &.mdl-card {
+      width: 512px;
+    }
+    > {
+      .mdl-card__title {
+        color: #fff;
+        height: 176px;
+        // background: url('../assets/demos/welcome_card.jpg') (center / cover);
+      }
+      .mdl-card__menu {
+        color: #fff;
+      }
+    }
+  }
+
+  .col-50 {
+    width: 30%;
+    margin-top: 6px;
+    margin-left: 6px;
+    float: left;
+}
+
+/* Clear floats after the columns */
+.row1 {
+    content: "";
+    display: table;
+    clear: both;
+    padding: 20px;
+}
+.p1{
+  font-family: 'Yesteryear', cursive;
+  font-size: 50px;
+}

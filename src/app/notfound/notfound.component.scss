@@ -1,0 +1,25 @@
+.fzf{
+    background-image: url("./../../assets/db.jpeg");
+    width: 100%;  
+    height: 700px;
+
+
+}
+//A transprant frame
+
+.nf_frame{
+    width: 400px;  
+    height: 260px;  
+    padding: 13px;  
+  
+    position:absolute;
+     left:500px;  
+     top: 200px;  
+    // margin-left: 300px;  
+    
+  
+    background-color: rgba(240, 255, 255, 0.5);  
+  
+    border-radius: 10px;  
+    text-align: center;
+}

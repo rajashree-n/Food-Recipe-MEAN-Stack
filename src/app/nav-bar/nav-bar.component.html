@@ -1,0 +1,209 @@
+
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+                <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title p1">Food-Food</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation -->
+            
+                    <a href="/search">
+          <label class="mdl-button mdl-js-button mdl-button--icon"
+                 for="fixed-header-drawer-exp">
+            <i (click)="onClickMe()" (click)="viewSearch(Search.value)" class="material-icons">search</i>
+          </label>
+        </a>
+
+        <div *ngIf="is_login == 1" id="user" class="material-icons mdl-badge mdl-badge--overlap" data-badge="♥">account_box</div>
+        
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+        for="user">
+            <a href="/profile"><li class="mdl-menu__item">
+              Profile
+            </li></a>
+            <a href="http://localhost:3000/logout"(click)="logout()"><li class="mdl-menu__item">
+                Log-out
+             </li></a>
+    </ul>
+                    <button id="demo-menu-lower-right"
+                    class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">more_vert</i>
+                    </button>
+
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                for="demo-menu-lower-right">
+                <ng-container  *ngFor="let x of res.meals">
+                    <li class="mdl-menu__item" (click)="onClickMe()"  (click)="viewCat(x.strCategory)">
+                       {{x.strCategory}}
+                    </li>
+                </ng-container>
+            </ul>
+
+
+
+        <!-- </div> -->
+          </div>
+        </header>
+        <div class="mdl-layout__drawer">
+          <span class="mdl-layout-title">MENU ♨</span>
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="/welcome">Home</a>
+            <!--If not in login statue you will see these in bav-bar-->
+            <a *ngIf="is_login == 0"class="mdl-navigation__link" href="/register">Register</a>
+            <a *ngIf="is_login == 0"class="mdl-navigation__link" href="/login">LogIn</a>
+             <!--If in login statue you will see these in bav-bar-->
+            <a *ngIf="is_login == 1"class="mdl-navigation__link" href="/profile">Profile</a>
+            <a *ngIf="is_login == 1"class="mdl-navigation__link" href="/bookmarkwall">Bookmark Wall</a>
+            <a *ngIf="is_login == 1"class="mdl-navigation__link" href="/edit">Edit Profile</a>
+            <a *ngIf="is_login == 1"class="mdl-navigation__link" href="http://localhost:3000/logout" (click)="logout()">Logout</a>
+            <a class="mdl-navigation__link" href="/aboutme">About Us</a>
+          </nav>
+        </div>
+</div>
+
+<div class="bg" style="padding-top:100px;">
+<div id="catg" class="row1">
+        <ng-container ng-if="show" *ngFor="let y of res2.meals">
+            <div class="col-50">
+                    <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                            <div class="mdl-card__title mdl-card--expand">
+                              <img src={{y.strMealThumb}} alt="Food receipe">
+                            </div>
+                            <div class="mdl-card__actions mdl-card--border">
+                                    <i class="material-icons">restaurant_menu</i>
+                              <a (click)="onClickMe()" (click)="viewMeal(y.idMeal)" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                {{y.strMeal}}
+                              </a>
+                            </div>
+                            <div class="mdl-card__menu">
+                                    <button class="mdl-button mdl-button--icon mdl-js-button mdl-button--colored">
+                                      <i class="material-icons">bookmark</i>
+                                    </button>
+                                  </div>
+                    
+                          </div>
+                </div>  
+        </ng-container>
+      </div>
+        
+      <div class="row" id="catgN">
+          <ng-container *ngFor="let z of res3.meals">
+                  <div class="container" >
+
+                        <div class="row">
+                        <div class="col-sm-8">
+                        <h3 class="p1">{{z.strMeal}}</h3>
+                        <img src={{z.strMealThumb}} style=" width:90%; height:600px;"/>
+                        <hr>
+                        <span class="mdl-chip mdl-chip--contact">
+                                <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">
+                                        <i class="glyphicon glyphicon-tags"></i>
+                                </span>
+                                <span class="mdl-chip__text">{{z.strArea}} {{z.strTags}}</span>
+                            </span>
+                        <p><em>This deep maroon cocktail is cherry cola for adults but with a subtle, spicy, and not-too-sweet flavor.</em></p>
+
+                        <button class="mdl-button mdl-js-button mdl-button--fab">
+                                <i class="fa fa-twitter"></i>
+                            </button>
+                        <button class="mdl-button mdl-js-button mdl-button--fab">
+                                <i class="fa fa-linkedin"></i>
+                            </button>
+                        <button class="mdl-button mdl-js-button mdl-button--fab">
+                                <i class="fa fa-facebook"></i>
+                            </button>
+                                                    
+                        </div>
+        
+        
+                        <div class="col-sm-4">
+        
+                                <div class="row" style="display:none;">
+                                        <div class="col-sm-4">
+                                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                                        <i class="material-icons">room_service</i>
+                                      </button> Main
+                                </div>
+                                        <div class="col-sm-4">
+        
+                                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                                        <i class="material-icons">restaurant_menu</i>
+                                     </button> Serves 4
+                                </div>
+                                        <div class="col-sm-4">
+        
+                                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                                        <i class="material-icons">access_time</i>
+                                    </button> 45 min
+                                </div>
+                            </div>
+        
+        
+                                <div class="row" style="color:gray;">
+                                        <div class="col-sm-4">
+                                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                                        <i class="material-icons">room_service</i>
+                                      </button> Main
+                                </div>
+                                        <div class="col-sm-4">
+        
+                                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                                        <i class="material-icons">restaurant_menu</i>
+                                     </button> Serves 4
+                                </div>
+                                        <div class="col-sm-4">
+        
+                                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                                        <i class="material-icons">access_time</i>
+                                    </button> 45 min
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <b>Ingredients :</b>
+                                <p style="color:gray;">{{z.strIngredient1}} {{z.strIngredient2}} {{z.strIngredient3}} {{z.strIngredient4}} {{z.strIngredient5}}
+                                        {{z.strIngredient6}} {{z.strIngredient7}} {{z.strIngredient8}} {{z.strIngredient9}} {{z.strIngredient10}}
+                                        {{z.strIngredient11}} {{z.strIngredient12}} {{z.strIngredient13}} {{z.strIngredient14}} {{z.strIngredient15}}
+                                        {{z.strIngredient16}} {{z.strIngredient17}} {{z.strIngredient18}} {{z.strIngredient19}} {{z.strIngredient20}}
+                                </p>
+                                <p>
+                                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                                                <i class="material-icons">star</i>
+                                        </button> 
+                                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                                                <i class="material-icons">star</i>
+                                        </button> 
+                                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                                                <i class="material-icons">star</i>
+                                        </button> 
+                                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                                                <i class="material-icons">star_half</i>
+                                        </button> 
+                                </p>
+                            </div>
+        
+                            <p>
+                                <em>
+                                        {{z.strInstructions}}
+                                </em>
+                            </p>
+                            <form action="http://localhost:3000/add" method="post">
+                                <input style="display:none" type ="text" name="name" value={{z.strMeal}}>
+                                <input style="display:none" type ="text" name="cat" value={{z.strArea}}>   
+                                <input style="display:none" type ="text" name="imageUrl" value={{z.strMealThumb}}>                            
+                                <input style="display:none" type ="text" name="apiId" value={{z.idMeal}}>                                  
+                               <!--If not in login statue you will not get the bookmark function-->
+                              <button *ngIf="is_login == 1" type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                                     ADD BOOKMARK
+                                    </button>
+                                <button *ngIf="is_login == 0" type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" disabled>
+                                                ADD BOOKMARK
+                                               </button>
+                            </form>
+                    </div>
+                </div>
+                </div>
+
+          </ng-container>
+        </div>

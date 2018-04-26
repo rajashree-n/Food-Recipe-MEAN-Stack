@@ -1,0 +1,21 @@
+
+        <div class="container bg">
+            <h1>Log In</h1>
+            <p>Log In to use our services.</p>
+            <hr>         
+
+            <form action="http://localhost:3000/" method="post">
+                <input type="text"  class="form-control" name="logemail" placeholder="E-mail" required="">
+                <input type="password" class="form-control" name="logpassword" placeholder="Password" required="">
+
+                <p>Forgot Password? <a href="#" style="color:dodgerblue">Click here to Reset!</a>.</p>
+
+                <div class="clearfix">
+                     <!--Switch the statue from login_0 to login_1-->
+                    <button type="submit" class="signupbtn" value="LOG IN" (click)="dolog(obj)"> Log in</button>
+                    <a href="/register"><button type="button" class="cancelbtn">Don't have an Account yet! Sign Up</button></a>
+
+                </div>
+            </form>
+
+    </div>
